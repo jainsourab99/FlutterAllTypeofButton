@@ -78,20 +78,49 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: const Text("Button Type"),
       ),
-      body: Center(
-          child: Container(
-            height: 100,
-              width: 100,
-              child: Image.asset('assets/images/photo.png'),
-          ),
+      body: Container(
+        // height: 300,
+        width: 300,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:<Widget> [
+             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text('R1', style: TextStyle(fontSize: 25),),
+                Text("R2", style: TextStyle(fontSize: 25),),
+                Column(
+                  children: [
+                    ElevatedButton(onPressed: () {}, child: Text("Col1")),
+                    ElevatedButton(onPressed: () {}, child: Text("Col1")),
+                  ],
+                ),
+                Text("R3", style: TextStyle(fontSize: 25),),
+                Text("R4", style: TextStyle(fontSize: 25),),
+                Text("R1", style: TextStyle(fontSize: 25),),
+                // ElevatedButton(onPressed: () {}, child: Text("Click me")),
+              ],
+            ),
+            Text('A', style: TextStyle(fontSize: 25),),
+            Text("B", style: TextStyle(fontSize: 25),),
+            Row(
+              children:[
+              ElevatedButton(onPressed: () {}, child: Text("Row1")),
+              ElevatedButton(onPressed: () {}, child: Text("Row1")),
+              ],
+            ),
+            Text("C", style: TextStyle(fontSize: 25),),
+            Text("D", style: TextStyle(fontSize: 25),),
+            Text("E", style: TextStyle(fontSize: 25),),
+            ElevatedButton(onPressed: () {}, child: Text("Click me")),
+          ],
+        ),
       )
 
       // This trailing comma makes auto-formatting nicer for build methods.
