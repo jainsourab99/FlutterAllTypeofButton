@@ -83,31 +83,87 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: const Text("Button Type"),
       ),
-      body: Center(
-        child: InkWell(
-          onTap: () {
-            print("On tap");
-          },
-          onLongPress: () {
-            print("onLongPress");
-          },
-          onDoubleTap: () {
-            print("onDoubleTap");
-          },
-          child: Container(
-            width: 200,
-            height: 200,
-            color: Colors.amber,
-            child: Center(
-                child: InkWell(
-                  onTap: () {
-                    print("Text Widget Tapped");
-                  },
-                  child: Text(
-                    "Click Text", style: TextStyle(fontSize: 21, fontWeight: FontWeight.w900),
-                  ),
-                )
-            ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Padding(padding: EdgeInsets.all(8)),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Container(
+                      height: 200,
+                      width: 200,
+                      margin: EdgeInsets.only(right: 11),
+                      color: Colors.white54,
+                    ),
+                    Container(
+                      height: 200,
+                      width: 200,
+                      margin: EdgeInsets.only(right: 11),
+                      color: Colors.orange,
+                    ),
+                    Container(
+                      height: 200,
+                      width: 200,
+                      margin: EdgeInsets.only(right: 11),
+                      color: Colors.orangeAccent,
+                    ),
+                    Container(
+                      height: 200,
+                      width: 200,
+                      margin: EdgeInsets.only(right: 11),
+                      color: Colors.purple,
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                margin: EdgeInsets.only(bottom: 11),
+                color: Colors.purple,
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                margin: EdgeInsets.only(bottom: 11),
+                color: Colors.purple,
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                margin: EdgeInsets.only(bottom: 11),
+                color: Colors.purple,
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                margin: EdgeInsets.only(bottom: 11),
+                color: Colors.red,
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                margin: EdgeInsets.only(bottom: 11),
+                color: Colors.black,
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                margin: EdgeInsets.only(bottom: 11),
+                color: Colors.blue,
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                margin: EdgeInsets.only(bottom: 11),
+                color: Colors.green,
+              )
+            ],
           ),
         ),
       ),
