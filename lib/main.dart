@@ -86,12 +86,14 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: const Text("Button Type"),
       ),
-      body: OutlinedButton(
-        child: Text("Outline Button"),
-        onPressed: () {
-          print("Button Pressed");
-        },
-      ),
+      body: Center(
+          child: Container(
+            height: 100,
+              width: 100,
+              child: Image.asset('assets/images/photo.png'),
+          ),
+      )
+
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
