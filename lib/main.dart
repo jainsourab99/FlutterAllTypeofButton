@@ -83,47 +83,35 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: const Text("Button Type"),
       ),
-      body: Container(
-        // height: 300,
-        width: 300,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children:<Widget> [
-             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text('R1', style: TextStyle(fontSize: 25),),
-                Text("R2", style: TextStyle(fontSize: 25),),
-                Column(
-                  children: [
-                    ElevatedButton(onPressed: () {}, child: Text("Col1")),
-                    ElevatedButton(onPressed: () {}, child: Text("Col1")),
-                  ],
-                ),
-                Text("R3", style: TextStyle(fontSize: 25),),
-                Text("R4", style: TextStyle(fontSize: 25),),
-                Text("R1", style: TextStyle(fontSize: 25),),
-                // ElevatedButton(onPressed: () {}, child: Text("Click me")),
-              ],
+      body: Center(
+        child: InkWell(
+          onTap: () {
+            print("On tap");
+          },
+          onLongPress: () {
+            print("onLongPress");
+          },
+          onDoubleTap: () {
+            print("onDoubleTap");
+          },
+          child: Container(
+            width: 200,
+            height: 200,
+            color: Colors.amber,
+            child: Center(
+                child: InkWell(
+                  onTap: () {
+                    print("Text Widget Tapped");
+                  },
+                  child: Text(
+                    "Click Text", style: TextStyle(fontSize: 21, fontWeight: FontWeight.w900),
+                  ),
+                )
             ),
-            Text('A', style: TextStyle(fontSize: 25),),
-            Text("B", style: TextStyle(fontSize: 25),),
-            Row(
-              children:[
-              ElevatedButton(onPressed: () {}, child: Text("Row1")),
-              ElevatedButton(onPressed: () {}, child: Text("Row1")),
-              ],
-            ),
-            Text("C", style: TextStyle(fontSize: 25),),
-            Text("D", style: TextStyle(fontSize: 25),),
-            Text("E", style: TextStyle(fontSize: 25),),
-            ElevatedButton(onPressed: () {}, child: Text("Click me")),
-          ],
+          ),
         ),
-      )
-
+      ),
+      );
       // This trailing comma makes auto-formatting nicer for build methods.
-    );
   }
 }
