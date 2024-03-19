@@ -76,6 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+    var names = ["abcd", "xyz", "values", "kkk", "dsfdf", "dsfdf", "fdfsdf"];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -83,36 +84,42 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: const Text("Button Type"),
       ),
-      body: Padding(
+      body: ListView.separated(itemBuilder: (context, index) {
+        return Row(
+          children: [
+        Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Center(
-          child: ListView(
-            scrollDirection: Axis.vertical,
-            reverse: true,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text("One", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text("Two", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text("Three", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text("Four", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text("Five", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),),
-              ),
-            ],
-          ),
+        child: Text(names[index], style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
         ),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Text(names[index], style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
+                ),
+        Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Text(names[index], style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
+        ),
+              ],
+            ),Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Text(names[index], style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Text(names[index], style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
+            ),
+          ],
+        );
+      },
+      itemCount: names.length,
+        separatorBuilder: (context, index) {
+        return Divider(height: 100, thickness: 1,);
+
+
+
+        },
       ),
       );
       // This trailing comma makes auto-formatting nicer for build methods.
