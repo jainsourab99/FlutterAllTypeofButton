@@ -84,85 +84,32 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text("Button Type"),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        padding: const EdgeInsets.all(20.0),
+        child: Center(
+          child: ListView(
+            scrollDirection: Axis.vertical,
+            reverse: true,
             children: [
-              Padding(padding: EdgeInsets.all(8)),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Container(
-                      height: 200,
-                      width: 200,
-                      margin: EdgeInsets.only(right: 11),
-                      color: Colors.white54,
-                    ),
-                    Container(
-                      height: 200,
-                      width: 200,
-                      margin: EdgeInsets.only(right: 11),
-                      color: Colors.orange,
-                    ),
-                    Container(
-                      height: 200,
-                      width: 200,
-                      margin: EdgeInsets.only(right: 11),
-                      color: Colors.orangeAccent,
-                    ),
-                    Container(
-                      height: 200,
-                      width: 200,
-                      margin: EdgeInsets.only(right: 11),
-                      color: Colors.purple,
-                    ),
-                  ],
-                ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("One", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),),
               ),
-              Container(
-                height: 200,
-                width: 200,
-                margin: EdgeInsets.only(bottom: 11),
-                color: Colors.purple,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("Two", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),),
               ),
-              Container(
-                height: 200,
-                width: 200,
-                margin: EdgeInsets.only(bottom: 11),
-                color: Colors.purple,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("Three", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),),
               ),
-              Container(
-                height: 200,
-                width: 200,
-                margin: EdgeInsets.only(bottom: 11),
-                color: Colors.purple,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("Four", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),),
               ),
-              Container(
-                height: 200,
-                width: 200,
-                margin: EdgeInsets.only(bottom: 11),
-                color: Colors.red,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("Five", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),),
               ),
-              Container(
-                height: 200,
-                width: 200,
-                margin: EdgeInsets.only(bottom: 11),
-                color: Colors.black,
-              ),
-              Container(
-                height: 200,
-                width: 200,
-                margin: EdgeInsets.only(bottom: 11),
-                color: Colors.blue,
-              ),
-              Container(
-                height: 200,
-                width: 200,
-                margin: EdgeInsets.only(bottom: 11),
-                color: Colors.green,
-              )
             ],
           ),
         ),
