@@ -70,54 +70,28 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    var names = ["abcd", "xyz", "values", "kkk", "dsfdf", "dsfdf", "fdfsdf"];
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: const Text("Widget Type"),
-      ),
-      body: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.grey,
-          ),
-          Expanded(
-            flex: 5,
-            child: Container(
-              width: 100,
-              height: 100,
-              color: Colors.pink,
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: const Text("Widget Type"),
+        ),
+        body: Padding(
+          padding: EdgeInsets.all(16),
+          child: Container(
+            color: Colors.blueGrey,
+            margin: EdgeInsets.all(16),
+            // padding: EdgeInsets.all(16),
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Text(
+                "Hello World",
+                style: TextStyle(fontSize: 25, color: Colors.black),
+              ),
             ),
           ),
-          Expanded(
-            child: Container(
-              width: 100,
-              height: 100,
-              color: Colors.green,
-            ),
-          )
-        ]
-
-
-
-
-
-
-
-
-      ),
-      );
-      // This trailing comma makes auto-formatting nicer for build methods.
+        ));
+    // This trailing comma makes auto-formatting nicer for build methods.
   }
 }
