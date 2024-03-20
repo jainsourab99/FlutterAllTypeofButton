@@ -73,27 +73,11 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text("Button Type"),
       ),
       body: Center(
-        child: CircleAvatar(
-          child: Container(
-            width: 100,
-            height: 100,
-            child: Column(
-              children: [
-                Container(
-                    width: 100,
-                    height: 100,
-                    child: Image.asset("assets/images/photo.png")),
-                Text(
-                  "Name",
-                  style: TextStyle(fontSize: 25, color: Colors.white),
-                ),
-              ],
-            ),
-          ),
-          // backgroundImage: AssetImage("assets/images/photo.png"),
-          backgroundColor: Colors.red,
-        ),
-      ),
+          child: Text(
+        "Hello World",
+        style: TextStyle(
+            fontFamily: "FontMain", fontSize: 25, fontWeight: FontWeight.w500),
+      )),
     );
     // This trailing comma makes auto-formatting nicer for build methods.
   }
