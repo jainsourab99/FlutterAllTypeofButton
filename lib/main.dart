@@ -84,44 +84,24 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: const Text("Button Type"),
       ),
-      body: ListView.separated(itemBuilder: (context, index) {
-        return Row(
-          children: [
-        Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Text(names[index], style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
-        ),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Text(names[index], style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
-                ),
-        Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Text(names[index], style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
-        ),
-              ],
-            ),Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(names[index], style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(names[index], style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
-            ),
-          ],
-        );
-      },
-      itemCount: names.length,
+      body: ListView.separated(
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: Text("${index + 1}"),
+            title: Text(names[index]),
+            subtitle: Text("subtitle"),
+            trailing: Icon(Icons.add),
+          );
+        },
+        itemCount: names.length,
         separatorBuilder: (context, index) {
-        return Divider(height: 100, thickness: 1,);
-
-
-
+          return Divider(
+            height: 100,
+            thickness: 1,
+          );
         },
       ),
-      );
-      // This trailing comma makes auto-formatting nicer for build methods.
+    );
+    // This trailing comma makes auto-formatting nicer for build methods.
   }
 }
