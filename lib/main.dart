@@ -57,17 +57,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -76,7 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    var names = ["abcd", "xyz", "values", "kkk", "dsfdf", "dsfdf", "fdfsdf"];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -84,22 +72,27 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: const Text("Button Type"),
       ),
-      body: ListView.separated(
-        itemBuilder: (context, index) {
-          return ListTile(
-            leading: Text("${index + 1}"),
-            title: Text(names[index]),
-            subtitle: Text("subtitle"),
-            trailing: Icon(Icons.add),
-          );
-        },
-        itemCount: names.length,
-        separatorBuilder: (context, index) {
-          return Divider(
+      body: Center(
+        child: CircleAvatar(
+          child: Container(
+            width: 100,
             height: 100,
-            thickness: 1,
-          );
-        },
+            child: Column(
+              children: [
+                Container(
+                    width: 100,
+                    height: 100,
+                    child: Image.asset("assets/images/photo.png")),
+                Text(
+                  "Name",
+                  style: TextStyle(fontSize: 25, color: Colors.white),
+                ),
+              ],
+            ),
+          ),
+          // backgroundImage: AssetImage("assets/images/photo.png"),
+          backgroundColor: Colors.red,
+        ),
       ),
     );
     // This trailing comma makes auto-formatting nicer for build methods.
