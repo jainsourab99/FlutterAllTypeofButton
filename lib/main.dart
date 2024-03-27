@@ -51,12 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    var time = DateTime.now(); // Current time
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.onSecondary,
@@ -66,58 +62,20 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Container(
-          width: 300,
+          width: 200,
+          height: 200,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextField(
-                keyboardType: TextInputType.emailAddress,
-                controller: emailText,
-                enabled: true,
-                decoration: InputDecoration(
-                    hintText: "Enter Your email",
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        borderSide: BorderSide(color: Colors.purple, width: 2)),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        borderSide: BorderSide(color: Colors.blue, width: 2)),
-                    disabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        borderSide: BorderSide(color: Colors.grey, width: 5)),
-                    // suffixText: "UserName Exist",
-                    suffixIcon: IconButton(
-                      icon: Icon(
-                        Icons.remove_red_eye,
-                        color: Colors.orange,
-                      ),
-                      onPressed: () {},
-                    ),
-                    prefixIcon: Icon(Icons.email)),
-              ),
-              Container(
-                height: 16,
-              ),
-              TextField(
-                keyboardType: TextInputType.multiline,
-                controller: passwordText,
-                obscureText: true,
-                obscuringCharacter: "*",
-                decoration: InputDecoration(
-                  hintText: "Enter Your password",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(color: Colors.deepOrange),
-                  ),
-                ),
+              Text(
+                "Current Time: ${time.hour}:${time.minute}:${time.second}",
+                style: mTextStyle20(),
               ),
               ElevatedButton(
                   onPressed: () {
-                    String uname = emailText.text.toString();
-                    String pass = passwordText.text;
-                    print("Email: $uname, pass: $pass");
+                    setState(() {});
                   },
-                  child: Text("Login"))
+                  child: Text("Click me"))
             ],
           ),
         ),
