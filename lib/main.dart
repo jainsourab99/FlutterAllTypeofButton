@@ -1,5 +1,6 @@
 import 'package:button_type_widget/ui_helper/util.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,7 +46,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   var emailText = TextEditingController();
   var passwordText = TextEditingController();
 
@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Current Time: ${time.hour}:${time.minute}:${time.second}",
+                "Current Time: ${DateFormat("MMMM").format(time)}",
                 style: mTextStyle20(),
               ),
               ElevatedButton(
