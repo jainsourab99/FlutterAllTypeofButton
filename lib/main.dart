@@ -51,52 +51,116 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var time = DateTime.now(); // Current time
+    var arrColors = [
+      Colors.blue,
+      Colors.black,
+      Colors.pink,
+      Colors.amber,
+      Colors.black26
+    ];
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.onSecondary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: const Text("Flutter Widgets"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "Select Date",
-              style: TextStyle(fontSize: 25),
-            ),
-            ElevatedButton(
-                onPressed: () async {
-                  DateTime? datePicketed = await showDatePicker(
-                      context: context,
-                      initialDate: DateTime.now(),
-                      firstDate: DateTime(2021),
-                      lastDate: DateTime(2024));
-
-                  if (datePicketed != null) {
-                    print("Date Selected: ${datePicketed.day}");
-                  }
-                },
-                child: Text("Select Date")),
-            ElevatedButton(
-                onPressed: () async {
-                  TimeOfDay? pickedTime = await showTimePicker(
-                      context: context,
-                      initialTime: TimeOfDay.now(),
-                      initialEntryMode: TimePickerEntryMode.dial);
-
-                  if (pickedTime != null) {
-                    print("Time Selected: ${pickedTime.hour}");
-                  }
-                },
-                child: Text("Select Time"))
-          ],
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.onSecondary,
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: const Text("Flutter Widgets"),
         ),
-      ),
-    );
+        body: GridView.builder(
+          itemBuilder: (context, index) {
+            return Container(
+              color: arrColors[index],
+            );
+          },
+          itemCount: arrColors.length,
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              mainAxisExtent: 200,
+              maxCrossAxisExtent: 100,
+              mainAxisSpacing: 10),
+        )
+
+        // Column(
+        //   children: [
+        //     Container(
+        //       height: 300,
+        //       child: GridView.count(
+        //         crossAxisCount: 5,
+        //         crossAxisSpacing: 11,
+        //         mainAxisSpacing: 11,
+        //         children: [
+        //           Container(
+        //             color: arrColors[0],
+        //           ),
+        //           Container(
+        //             color: arrColors[1],
+        //           ),
+        //           Container(
+        //             color: arrColors[2],
+        //           ),
+        //           Container(
+        //             color: arrColors[3],
+        //           ),
+        //           Container(
+        //             color: arrColors[4],
+        //           ),
+        //           Container(
+        //             color: arrColors[1],
+        //           ),
+        //           Container(
+        //             color: arrColors[2],
+        //           ),
+        //           Container(
+        //             color: arrColors[3],
+        //           ),
+        //           Container(
+        //             color: arrColors[4],
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+        //     Container(
+        //       height: 30,
+        //     ),
+        //     Container(
+        //       height: 400,
+        //       child: GridView.extent(
+        //         maxCrossAxisExtent: 50,
+        //         crossAxisSpacing: 11,
+        //         mainAxisSpacing: 11,
+        //         children: [
+        //           Container(
+        //             color: arrColors[0],
+        //           ),
+        //           Container(
+        //             color: arrColors[1],
+        //           ),
+        //           Container(
+        //             color: arrColors[2],
+        //           ),
+        //           Container(
+        //             color: arrColors[3],
+        //           ),
+        //           Container(
+        //             color: arrColors[4],
+        //           ),
+        //           Container(
+        //             color: arrColors[1],
+        //           ),
+        //           Container(
+        //             color: arrColors[2],
+        //           ),
+        //           Container(
+        //             color: arrColors[3],
+        //           ),
+        //           Container(
+        //             color: arrColors[4],
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+        //   ],
+        // ),
+        );
     // This trailing comma makes auto-formatting nicer for build methods.
   }
 }
