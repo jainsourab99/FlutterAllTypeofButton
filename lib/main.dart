@@ -61,23 +61,39 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text("Flutter Widgets"),
       ),
       body: Center(
-        child: Container(
-          width: 200,
-          height: 200,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Current Time: ${DateFormat("MMMM").format(time)}",
-                style: mTextStyle20(),
-              ),
-              ElevatedButton(
-                  onPressed: () {
-                    setState(() {});
-                  },
-                  child: Text("Click me"))
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "Select Date",
+              style: TextStyle(fontSize: 25),
+            ),
+            ElevatedButton(
+                onPressed: () async {
+                  DateTime? datePicketed = await showDatePicker(
+                      context: context,
+                      initialDate: DateTime.now(),
+                      firstDate: DateTime(2021),
+                      lastDate: DateTime(2024));
+
+                  if (datePicketed != null) {
+                    print("Date Selected: ${datePicketed.day}");
+                  }
+                },
+                child: Text("Select Date")),
+            ElevatedButton(
+                onPressed: () async {
+                  TimeOfDay? pickedTime = await showTimePicker(
+                      context: context,
+                      initialTime: TimeOfDay.now(),
+                      initialEntryMode: TimePickerEntryMode.dial);
+
+                  if (pickedTime != null) {
+                    print("Time Selected: ${pickedTime.hour}");
+                  }
+                },
+                child: Text("Select Time"))
+          ],
         ),
       ),
     );
