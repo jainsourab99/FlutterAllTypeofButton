@@ -46,8 +46,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var emailText = TextEditingController();
-  var passwordText = TextEditingController();
+  void callBack() {
+    print("callBack");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,101 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // the App.build method, and use it to set our appbar title.
           title: const Text("Flutter Widgets"),
         ),
-        body: GridView.builder(
-          itemBuilder: (context, index) {
-            return Container(
-              color: arrColors[index],
-            );
-          },
-          itemCount: arrColors.length,
-          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              mainAxisExtent: 200,
-              maxCrossAxisExtent: 100,
-              mainAxisSpacing: 10),
-        )
-
-        // Column(
-        //   children: [
-        //     Container(
-        //       height: 300,
-        //       child: GridView.count(
-        //         crossAxisCount: 5,
-        //         crossAxisSpacing: 11,
-        //         mainAxisSpacing: 11,
-        //         children: [
-        //           Container(
-        //             color: arrColors[0],
-        //           ),
-        //           Container(
-        //             color: arrColors[1],
-        //           ),
-        //           Container(
-        //             color: arrColors[2],
-        //           ),
-        //           Container(
-        //             color: arrColors[3],
-        //           ),
-        //           Container(
-        //             color: arrColors[4],
-        //           ),
-        //           Container(
-        //             color: arrColors[1],
-        //           ),
-        //           Container(
-        //             color: arrColors[2],
-        //           ),
-        //           Container(
-        //             color: arrColors[3],
-        //           ),
-        //           Container(
-        //             color: arrColors[4],
-        //           ),
-        //         ],
-        //       ),
-        //     ),
-        //     Container(
-        //       height: 30,
-        //     ),
-        //     Container(
-        //       height: 400,
-        //       child: GridView.extent(
-        //         maxCrossAxisExtent: 50,
-        //         crossAxisSpacing: 11,
-        //         mainAxisSpacing: 11,
-        //         children: [
-        //           Container(
-        //             color: arrColors[0],
-        //           ),
-        //           Container(
-        //             color: arrColors[1],
-        //           ),
-        //           Container(
-        //             color: arrColors[2],
-        //           ),
-        //           Container(
-        //             color: arrColors[3],
-        //           ),
-        //           Container(
-        //             color: arrColors[4],
-        //           ),
-        //           Container(
-        //             color: arrColors[1],
-        //           ),
-        //           Container(
-        //             color: arrColors[2],
-        //           ),
-        //           Container(
-        //             color: arrColors[3],
-        //           ),
-        //           Container(
-        //             color: arrColors[4],
-        //           ),
-        //         ],
-        //       ),
-        //     ),
-        //   ],
-        // ),
-        );
+        body: ElevatedButton(onPressed: callBack, child: Text("Call Back")));
     // This trailing comma makes auto-formatting nicer for build methods.
   }
 }
